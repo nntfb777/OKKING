@@ -370,8 +370,8 @@ ul li {
 	display: flex;
     text-align: center;
     clear: both;
-    background-color: #520000;
-    border-top: 1px solid #b50409;
+    background-color: #580000;
+    border-top: 2px solid #b50409;
     bottom: 0;
     flex-direction: row;
     flex-wrap: wrap;
