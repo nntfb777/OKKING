@@ -85,7 +85,7 @@ ul li {
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
 }
 
 
@@ -141,8 +141,8 @@ ul li {
 
 #header .logo img {
 	display: block;
-	width: 210px;
-	padding:15px;
+	width: 260px;
+	padding:0px;
 }
 
 #header .hIm01 {
@@ -272,8 +272,8 @@ ul li {
 }
 
 #main #conts .refresh a:hover {
-	color: #ff0;
-	background: linear-gradient(to right, #abbd73 0%, #abbd73 100%);
+	color: #720000;
+	background: linear-gradient(to right, #fec942 0%, #fec942 100%);
 	cursor: pointer;
 }
 
