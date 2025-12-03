@@ -619,10 +619,9 @@ ul li {
 		width: 130%;
 	}
 
-	#header .hIm02 a,
+	#header .hIm02 a,	
 	#header .hIm02 a img {
-		width: 80%;
-		border-radius: 35px;
+		width: 95%;
 		background-color: transparent;
 		display: flex;
  	 	justify-content: flex-end;
