@@ -50,7 +50,6 @@ ul li {
 	visibility: hidden
 }
 
-/*---------------index--------------*/
 .sjbdmap,
 .pcbdmap,
 #container,
@@ -72,64 +71,21 @@ ul li {
 	}
 
 	#containerlow {
-		/* Hiển thị trên PC */
 		display: block !important;
 	}
 }
 
 #header {
 	margin-bottom: 10px;
-    background: #720000 no-repeat center bottom;
-    border-bottom: 1px solid #b50409;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    padding: 5px;
+ 	background: #720000 no-repeat center bottom;
+ 	border-bottom: 1px solid #b50409;
+ 	display: flex;
+ 	flex-direction: row;
+ 	flex-wrap: nowrap;
+ 	align-items: center;
+ 	padding: 5px;
 }
 
-
-#header .hInner {
-	margin: 0 auto;
-	width: 1000px;
-}
-
-#header .hInner h1 {
-	float: left;
-	color: #fff;
-	font-size: 14px;
-	font-weight: normal;
-}
-
-#header .hInner h1 span {
-	color: #fe8f21;
-	font-weight: bold;
-}
-
-#header .hInner ul {
-	float: right;
-}
-
-#header .hInner li {
-	margin-left: 10px;
-	float: left;
-	color: #4D4D4D;
-	font-size: 14px;
-}
-
-#header .hInner li a {
-	margin-right: 3px;
-	color: #a6805c;
-	font-size: 13px;
-}
-
-#header .hInner li:last-child a {
-	margin-right: 0;
-}
-
-#header .hInner li a:hover {
-	color: #ff0;
-}
 
 #header .hBox {
 	width: 1000px;
@@ -145,31 +101,7 @@ ul li {
 	padding:0px;
 }
 
-#header .hIm01 {
-	margin: 6px 0 0;
-	float: left;
-	position: relative;
-	color: #ffff96;
-	font-size: 24px;
-	line-height: 28px;
-	text-align: center;
-}
 
-#header .hIm01 img,
-#header .hIm02 img {
-	display: block;
-}
-
-#header .hIm02 {
-	display: flex;
-	justify-content: flex-end;
-	width: 100%;
-}
-
-#header .hIm02 a {
-	background-color: #ffffff;
-	border-radius: 35px;
-}
 
 #main {
 	padding: 22px 13px 0 20px;
@@ -292,9 +224,9 @@ ul li {
 
 .socials, .socials a {
 	display: flex;
-    justify-content: space-between;
+ 	justify-content: space-between;
 	align-items: center;
-    margin-top: 10px;
+ 	margin-top: 10px;
 }
 .socials img {
 	width: 150px;
@@ -370,90 +302,180 @@ ul li {
 	height: auto;
 }
 
+#containerlow {
+ 	padding: 0 0 0 0;
+}
+
+#mainlow {
+ 	width: 1000px !important;
+ 	max-width: 100%;
+	margin: 0 auto 10px;
+	position: relative;
+	border: 2px solid #b40308 !important;
+	background-color: #990000;
+	padding-top: 60px;
+	box-sizing: border-box;
+}
+
+#banner-pc-list {
+ 	padding: 10px 10px 20px 10px;
+ 	background-color: #990000;
+}
+
+#banner-pc-list h2 {
+ 	margin-bottom: 17px;
+	text-align: center;
+	position: absolute;
+	top: -6px;
+	left: 50%;
+	transform: translateX(-50%);
+
+}
+#banner-pc-list h2 img {
+ 	display: block;
+}
+
+.double-banner-group {
+	display: flex !important;
+	gap: 10px;
+	justify-content: space-between;
+	align-items: flex-start;
+ 	padding: 0;
+}
+
+.banner-item {
+	flex-basis: calc(60% - 7.5px);
+ 	margin-bottom: 0;
+ 	
+	overflow: hidden;
+	border-radius: 5px;
+ 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.banner-item img {
+ 	display: block;
+ 	width: 100%;
+ 	height: auto;
+}
+
+
+#tripleBannerCarousel .carousel-control-prev,
+#tripleBannerCarousel .carousel-control-next {
+ 	width: 30px;
+ 	height: 30px;
+ 	top: 50%;
+ 	transform: translateY(-50%);
+ 	background-color: rgba(0, 0, 0, 0.5);
+ 	border-radius: 50%;
+ 	opacity: 0.7;
+}
+
+#container-social {
+ 	padding: 0;
+}
+
+#main-social {
+ 	width: 1000px !important;
+ 	max-width: 100%;
+	margin: 0px auto 10px;
+	position: relative;
+	border: 2px solid #b40308 !important;
+	background-color: #990000;
+ 	box-sizing: border-box;
+	padding: 72px 10px 10px 10px;
+}
+
+#main-social h2 {
+ 	margin-bottom: 17px;
+	text-align: center;
+	position: absolute;
+	top: -6px;
+	left: 50%;
+	transform: translateX(-50%);
+ 	padding-bottom: 3px;
+}
+#main-social h2 img {
+ 	display: block;
+}
+
+.social-links-container {
+ 	display: flex;
+ 	justify-content: space-around;
+ 	align-items: center;
+ 	gap: 20px;
+}
+
+.social-item {
+ 	flex-basis: 33%;
+ 	text-align: center;
+ 	padding: 15px 10px;
+ 	border-radius: 8px;
+ 	background-color: #580000;
+ 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+ 	transition: all 0.3s ease-in-out;
+}
+
+.social-item a {
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ 	color: #fff;
+ 	text-decoration: none;
+}
+
+.social-item img {
+ 	width: 70px;
+ 	height: 70px;
+ 	margin-bottom: 8px;
+ 	border-radius: 50%;
+ 	border: 3px solid #ff0;
+ 	background-color: #fff;
+ 	object-fit: cover;
+ 	transition: transform 0.3s;
+}
+
+.social-item:hover {
+ 	background-color: #ff0000;
+ 	transform: translateY(-5px);
+ 	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-item span {
+	display: block;
+ 	font-size: 16px;
+ 	font-weight: 700;
+ 	color: #e5c561;
+ 	text-shadow: 1px 1px 2px #000000;
+	margin-top: 5px;
+}
+
+
 #footer {
 	display: flex;
-    text-align: center;
-    clear: both;
-    background-color: #720000;
-    border-top: 2px solid #b50409;
-    bottom: 0;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    align-items: baseline;
+ 	text-align: center;
+ 	clear: both;
+ 	background-color: #720000;
+ 	border-top: 2px solid #b50409;
+ 	bottom: 0;
+ 	flex-direction: row;
+ 	flex-wrap: wrap;
+ 	align-content: center;
+ 	justify-content: center;
+ 	align-items: baseline;
 }
 
 
-#footer .fImg {
-	margin-bottom: 0px;
-}
 
-#footer .fImg ul {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border: 2px solid #016a21;
-	background-color: #03682657;
-}
-
-#footer .fBox {
-	padding: 10px;
-}
-
-#footer .fNavi li {
-	margin: 0 10px;
-	display: inline-block;
-}
-
-#footer .fNavi li a {
-	color: #825c48;
-}
-
-#footer .fNavi li a:hover {
-	color: #ff0;
-}
 
 #footer p {
 	margin-top: 7px;
 	color: #787878;
-	font-size: 12px;
+	font-size: 16px;
 	line-height: 2.2;
 }
 
-.box-redirect {
-	padding: 0px 13px 0 20px !important;
-}
 
-.link-download-app {
-	padding: 0px;
-	position: relative;
-	overflow: hidden;
-	margin-top: 10px;
-}
 
-.link-download-app .content {
-	position: relative;
-	background-color: #990000;
-	padding: 10px;
-	text-align: center;
-	z-index: 2;
-}
-
-.link-download-app,
-.link-download-app .content {
-	border-radius: 10px;
-}
-
-.link-download-app h3 {
-	color: #016a21;
-	font-size: 16px;
-	white-space: nowrap;
-}
-
-.link-download-app h3:hover {
-	text-shadow: 0 0 2px #ff0;
-}
 
 @keyframes animate {
 	from {
@@ -477,7 +499,7 @@ ul li {
 	#main,
 	#header .hBox,
 	#header .hInner,
-	#footer .fBox {
+	#footer {
 		max-width: 100%;
 	}
 }
@@ -491,7 +513,8 @@ ul li {
 
 	#container,
 	#container2,
-	#containerlow {
+	#containerlow,
+	#container-social {
 		width: 100%;
 		padding-left: 10px;
 		padding-right: 10px;
@@ -559,17 +582,14 @@ ul li {
 		width: 20%;
 	}
 
+	#footer {
+		max-width: 100%;
+	}
+
 	#footer p {
-		font-size: 20px;
+		font-size: 16px;
 	}
 
-	.link-download-app .content {
-		padding: 20px;
-	}
-
-	.link-download-app h3 {
-		font-size: 20px;
-	}
 }
 
 @media screen and (max-width: 767.98px) {
@@ -605,7 +625,7 @@ ul li {
 		border-radius: 35px;
 		background-color: transparent;
 		display: flex;
-        justify-content: flex-end;
+ 	 	justify-content: flex-end;
 	}
 
 	#container2 {
@@ -649,252 +669,77 @@ ul li {
 	}
 
 	#main-social {
-	        width: 100%;
-        	max-width: 100%;
-        	box-sizing: border-box;
-        /* Giảm padding để phù hợp với di động */
-        	padding: 1px 0px; 
-    	}
-.social-links-container {
-        display: flex; 
-        flex-wrap: wrap; /* Cho phép xuống dòng */
-        
-        /* Chuyển sang space-around để phân bổ đều không cần gap */
-        justify-content: space-around; 
-        
-        /* Loại bỏ gap */
-        gap: 0; 
-        padding: 0;
-        margin: 0;
-    }
+ 	 	width: 100%;
+ 	 	max-width: 100%;
+ 	 	box-sizing: border-box;
+ 	 	padding: 52px 10px 1px 10px;
+ 	 	margin: 0 auto 10px ;
+ 	}
+	
+	#main-social h2 img {
+		width: 345px;
+	}
 
-    /* 🎯 1. Chiều rộng cho 3 item đầu tiên (Hàng 3 cột) */
-    .social-item:nth-child(-n+3) {
-        /* Đặt chiều rộng dựa trên tỷ lệ */
-        width: 25%; /* 32% x 3 = 96%. Dùng width để ép chúng xếp ngang */
-        flex-basis: auto;
-        
-        /* Loại bỏ padding và margin bên trong */
-        padding: 8px 0; 
-        margin: 0 0 1px 0; /* Chỉ giữ margin dưới để tạo khoảng cách giữa 2 hàng */
-        border-width: 0;
-    }
-    
-    /* 🎯 2. Chiều rộng cho 2 item cuối (Hàng 2 cột) */
-    .social-item:nth-child(n+4) {
-        /* Đặt chiều rộng dựa trên tỷ lệ */
-        width: 25%; /* 48% x 2 = 96%. Dùng width để ép chúng xếp ngang */
-        flex-basis: auto;
-        
-        /* Loại bỏ padding và margin bên trong */
-        padding: 8px 0; 
-        margin: 0 0 5px 0;
-        border-width: 0;
-    }
+	.social-links-container {
+ 	 	display: flex;
+ 	 	flex-wrap: wrap;
+ 	 	justify-content: space-around;
+ 	 	gap: 5px;
+ 	 	padding: 5px;
+ 	 	margin: 5px;
+ 	}
 
-    /* 3. Đảm bảo chữ và icon cực kỳ nhỏ và không tràn */
-    .social-item img {
-        width: 10px; /* Giảm kích thước icon xuống 25px */
-        height: 10px;
-        margin-bottom: 2px; 
-    }
-    
-    .social-item span {
-        font-size: 5px; /* Giảm kích thước chữ xuống 8px (rất nhỏ) */
-        /* Giữ nguyên thuộc tính cắt chữ (ellipsis) */
-        white-space: wrap; 
-        overflow: visible; 
-        text-overflow: initial; 
-    }
-    
-    /* Loại bỏ padding trong thẻ <a> (nếu có) */
-    .social-item a {
-        padding: 0;
-    }
-}
+ 	.social-item:nth-child(-n+3) {
+ 	 	width: 30%;
+ 	 	flex-basis: auto;
+ 	 	padding: 8px 0;
+ 	 	margin: 0 0 1px 0;
+ 	 	border-width: 0;
+ 	}
+ 	 	
+ 	.social-item:nth-child(n+4) {
+ 	 	width: 30%;
+ 	 	flex-basis: auto;
+ 	 	padding: 8px 0;
+ 	 	margin: 0 0 5px 0;
+ 	 	border-width: 0;
+ 	}
+
+ 	.social-item img {
+ 	 	width: 50px;
+ 	 	height: 50px;
+ 	 	margin-bottom: 2px;
+ 	}
+ 	 	
+ 	.social-item span {
+ 	 	font-size: 14px;
+ 	 	white-space: wrap;
+ 	 	overflow: visible;
+ 	 	text-overflow: initial;
+ 	}
+ 	 	
+ 	.social-item a {
+ 	 	padding: 0 ;
+ 	}
+	
 
 	#footer {
-		bottom: 0;
+		max-width: 100% !important;
 	}
 
 	#footer p {
 		font-size: 16px;
 	}
 }
-#containerlow {
-    padding: 0 0 0 0; /* Padding trên/dưới giống #main */
-}
-
-#mainlow {
-    width: 1000px !important; 
-    max-width: 100%; 
-	margin: 0 auto 10px; /* Căn giữa */
-	position: relative;
-	border: 2px solid #b40308 !important; 
-	background-color: #990000; 
-	padding: 0;
-	box-sizing: border-box; 
-	overflow: hidden; /* Quan trọng để tránh tràn */
-}
-
-#banner-pc-list {
-    /* Điều chỉnh padding để các banner không bị dính vào border của #mainlow */
-    padding: 10px 10px 20px 10px; 
-    background-color: #990000; /* Có thể đặt nền trắng cho riêng khu vực banner */
-}
-
-#banner-pc-list h2 {
-    /* Ép h2 có chiều rộng bằng nội dung và căn giữa */
-    width: fit-content; 
-	margin: 0 auto 15px; 
-    display: block;
-    
-    /* Căn ảnh tiêu đề */
-    text-align: center;
-    padding-top: -200px;
-}
-#banner-pc-list h2 img {
-    display: block;
-}
-
-.double-banner-group { 
-	display: flex !important;
-	gap: 10px; /* Khoảng cách giữa 2 banner */
-	justify-content: space-between; /* Đẩy 2 banner ra hai phía */
-	align-items: flex-start;
-    /* Xóa padding: 0 100px; để nó chiếm toàn bộ chiều rộng có sẵn */
-    padding: 0; 
-}
-
-.banner-item {
-    /* Tính toán chia đều chiều rộng cho 2 cột */
-	flex-basis: calc(60% - 7.5px); 
-    
-    /* Đảm bảo không có margin dọc không cần thiết */
-    margin-bottom: 0; 
-    
-	overflow: hidden;
-	border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.banner-item img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-
-#tripleBannerCarousel .carousel-control-prev,
-#tripleBannerCarousel .carousel-control-next {
-    width: 30px; 
-    height: 30px;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    opacity: 0.7; 
-}
-
-#container-social {
-    /* Đảm bảo khối này không có padding top không cần thiết */
-    padding: 0; 
-}
-
-#main-social {
-    /* Thiết lập chiều rộng, căn giữa, border giống #main */
-    width: 1000px !important; 
-    max-width: 100%; 
-	margin: 10px auto 10px; /* Thêm khoảng cách 10px trên và dưới */
-	position: relative;
-    
-	border: 2px solid #b40308 !important; 
-	background-color: #990000; 
-    
-    box-sizing: border-box; 
-    overflow: hidden;
-    padding: 22px 13px 22px 20px; /* Padding nội dung giống #main */
-}
-
-/* Tiêu đề H2 */
-#main-social h2 {
-    width: fit-content;
-    margin: 0 auto 20px auto;
-    padding: 0; 
-    display: block;
-    text-align: center;
-    border-bottom: 2px dotted #c3942c; /* Thêm đường kẻ dưới tiêu đề */
-    padding-bottom: 10px;
-}
-#main-social h2 img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Khối liên kết */
-.social-links-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 20px;
-}
-
-.social-item {
-    flex-basis: 33%; /* Chia đều 3 cột */
-    text-align: center;
-    padding: 15px 10px;
-    border-radius: 8px;
-    background-color: #580000; /* Màu nền xanh đậm cho khối */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease-in-out;
-}
-}
-
-.social-item a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #fff;
-    text-decoration: none;
-}
-
-.social-item img {
-    width: 70px; /* Tăng kích thước icon lên một chút */
-    height: 70px;
-    margin-bottom: 8px;
-    border-radius: 50%;
-    border: 3px solid #ff0; /* Đường viền vàng nổi bật xung quanh icon */
-    background-color: #fff; /* Nền trắng cho icon để nổi bật hơn */
-    object-fit: cover;/* Dùng 'cover' hoặc 'contain'. 'cover' sẽ lấp đầy 70x70px */
-    transition: transform 0.3s;
-}
-
-.social-item:hover {
-    background-color: #ff0000;
-    transform: translateY(-5px); 
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Định kiểu chữ bên dưới icon */
-.social-item span {
-	display: block;
-    font-size: 16px;
-    font-weight: 700; /* Chữ đậm hơn */
-    color: #e5c561;
-    text-shadow: 1px 1px 2px #000000; /* Đổ bóng chữ nhẹ */
-	margin-top: 5px;
-}
 
 @keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(254, 143, 33, 0.4);
-    }
-    70% {
-        box-shadow: 0 0 0 10px rgba(254, 143, 33, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(254, 143, 33, 0);
-    }
+ 	0% {
+ 	 	box-shadow: 0 0 0 0 rgba(254, 143, 33, 0.4);
+ 	}
+ 	70% {
+ 	 	box-shadow: 0 0 0 10px rgba(254, 143, 33, 0);
+ 	}
+ 	100% {
+ 	 	box-shadow: 0 0 0 0 rgba(254, 143, 33, 0);
+ 	}
 }
-
