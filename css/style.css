@@ -567,7 +567,7 @@ ul li {
 
 	#conts .linkUl li span {
 		padding: 7px;
-		font-size: 24px;
+		font-size: 22px;
 		width: 50%;
 	}
 
@@ -637,12 +637,13 @@ ul li {
 
 	#conts .linkUl li span,
 	#conts .linkUl li a {
-		font-size: 14px;
+		font-size: 16px;
 		padding: 0;
 	}
 
 	#conts .linkUl li a {
 		height: 37px;
+		width: 300px;
 	}
 
 	.link-download-app h3 {
