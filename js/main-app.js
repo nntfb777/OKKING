@@ -33,6 +33,12 @@ var app = new Vue({
                     "https://okking82.com/",
                     "https://okking84.com/",
                     "https://okking86.com/",
+                    "https://okking90.com/",
+                    "https://okking92.com/",
+                    "https://okking94.com/",
+                    "https://okking96.com/",
+                    "https://okking98.com/",
+            
                 ],
                 urls: [],
                 moburls: [],
