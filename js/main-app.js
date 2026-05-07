@@ -46,7 +46,7 @@ var app = new Vue({
                 connectTimeout: "hết hạn",
                 connectFail: '9ms',
                 name: 'okking.com/',
-                kefuUrl: "https://0294k61.x0icj44b.com/chatwindow.aspx?siteId=65002300&planId=55c2d7f7-3521-4c8b-a842-347a0a5a8e4a&chatgroup=4&_=1762656733356",
+                kefuUrl: "https://kxkxr.shu41xe3.com/8f5ad58563fd5faddb538c5jkfle-kelif555acd25d875f6773b542f1449cb85b8aa8f43253f4571af0aad52ac82e14ba&chatgroup=5",
                 apkAppUrl: 'https://okking91.com/DownloadApp/',
                 pcUrl: 'https://okking91.com/DownloadApp/',
             },
