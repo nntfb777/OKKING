@@ -38,6 +38,12 @@ var app = new Vue({
                     "https://okking94.com/",
                     "https://okking96.com/",
                     "https://okking98.com/",
+                    "https://9kingok.com/",
+                    "https://7kingok.com/",
+                    "https://5kingok.com/",
+                    "https://3kingok.com/",
+                    "https://1kingok.com/",
+                            
             
                 ],
                 urls: [],
