@@ -1,187 +1,163 @@
 var app = new Vue({
-            el: '#app',
-            data: {
-                timeHanlde: null,
-                tim: 0,
-                masterUrls: [
-                    "https://okking61.com/",
-                    "https://okking62.com/",
-                    "https://okking63.com/",
-                    "https://okking64.com/",
-                    "https://okking65.com/",
-                    "https://okking66.com/",
-                    "https://okking67.com/",
-                    "https://okking68.com/",
-                    "https://okking70.com/",
-                    "https://okking71.com/",
-                    "https://okking73.com/",
-                    "https://okking75.com/",
-                    "https://okking77.com/",
-                    "https://okking87.com/",
-                    "https://okking89.com/",
-                    "https://okking91.com/",
-                    "https://okking93.com/",
-                    "https://okking95.com/",
-                    "https://okking79.com/",
-                    "https://okking81.com/",
-                    "https://okking83.com/",
-                    "https://okking85.com/",
-                    "https://okking72.com/",
-                    "https://okking74.com/",
-                    "https://okking78.com/",
-                    "https://okking80.com/",
-                    "https://okking82.com/",
-                    "https://okking84.com/",
-                    "https://okking86.com/",
-                    "https://okking90.com/",
-                    "https://okking92.com/",
-                    "https://okking94.com/",
-                    "https://okking96.com/",
-                    "https://okking98.com/",
-                    "https://9kingok.com/",
-                    "https://7kingok.com/",
-                    "https://5kingok.com/",
-                    "https://3kingok.com/",
-                    "https://1kingok.com/",
-                            
-            
-                ],
-                urls: [],
-                moburls: [],
-                waitingText: "đang kiểm duyệt ",
-                connectTimeout: "hết hạn",
-                connectFail: '9ms',
-                name: 'okking.com/',
-                kefuUrl: "https://kxkxr.shu41xe3.com/8f5ad58563fd5faddb538c5jkfle-kelif555acd25d875f6773b542f1449cb85b8aa8f43253f4571af0aad52ac82e14ba&chatgroup=5",
-                apkAppUrl: 'https://okking91.com/DownloadApp/',
-                pcUrl: 'https://okking91.com/DownloadApp/',
-            },
-            mounted() {
-                this.urls = this.getRandomUrls(5);
-                this.moburls = this.getRandomUrls(5);
-                this.startPingCheck();
-            },
-            methods: {
-                getRandomUrls(count) {
-                    const shuffled = this.masterUrls.slice().sort(() => 0.5 - Math.random());
-                    const selectedUrls = shuffled.slice(0, count);
-                    return selectedUrls.map((url, index) => ({
-                        url: url,
-                        title: `Link truy cập ${index + 1}`,
-                        second: this.waitingText,
-                        time: 0
-                    }));
-                },
-                startPingCheck() {
-                    this.timeHanlde = setInterval(() => {
-                        this.tim++
-                    }, 100)
-                    for (let i = 0; i < this.urls.length; i++) {
-                        this.send(this.urls[i].url, i, 'urls')
-                    }
-                    for (let j = 0; j < this.moburls.length; j++) {
-                        this.send(this.moburls[j].url, j, 'moburls');
-                    }
-                    setTimeout(() => {
-                        this.sortList(this.urls);
-                        this.sortList(this.moburls);
-                    }, 1000)
-                },
-                refresh() {
-                    this.tim = 0
-                    clearInterval(this.timeHanlde)
-                    this.urls = this.getRandomUrls(5);
-                    this.moburls = this.getRandomUrls(5);
-                    this.startPingCheck();
-                },
-                sortOrder(filed, type = 'asc') {
-                    return (a, b) => {
-                        if (type === 'asc') return a[filed] > b[filed] ? 1 : -1;
-                        return a[filed] > b[filed] ? -1 : 1;
-                    }
-                },
-                sortList() {
-                    this.urls.sort(this.sortOrder('time', 'asc'))
-                    this.moburls.sort(this.sortOrder('time', 'asc'))
-                },
-                send(url, index, listName) {
-                    const _this = this
-                    $.ajax({
-                        type: 'get',
-                        url: url,
-                        dataType: 'jsonp',
-                        timeout: 1000,
-                        complete: function (res) {
-                            const targetList = _this[listName];
-                            if (res.status == 200) {
-                                if (_this.tim > 5000) {
-                                    targetList[index].second = _this.connectTimeout;
-                                }
-                                else {
-                                    targetList[index].second = _this.tim + 'ms';
-                                }
-                                targetList[index].time = _this.tim;
-                            }
-                            else {
-                                targetList[index].second = _this.connectFail;
-                                targetList[index].time = 999999;
-                            }
-                        },
-                    })
-                },
-                down() {
-                    if (this.browserDetection() == 'PC') {
-                        window.location.href = this.pcUrl;
-                    } else {
-                        if (this.browserDetection() == 'iphone' || this.browserDetection() == 'ipad') {
-                            window.location.href = this.ios_step_1
-                            setTimeout(() => {
-                                window.location.href = this.ios_step_2
-                            }, 2000)
-                        } else {
-                            window.location.href = this.apkAppUrl;
-                        }
-                    }
-                },
-                browserDetection() {
-                    var userAgent = window.navigator.userAgent.toLowerCase();
-                    var browser = null;
-                    if (userAgent.match(/ipad/i)) {
-                        browser = 'ipad';
-                    } else if (userAgent.match(/iphone os/i)) {
-                        browser = 'iphone';
-                    } else if (userAgent.match(/midp/i)) {
-                        browser = 'midp'
-                    } else if (userAgent.match(/rv:1.2.3.4/i)) {
-                        browser = 'rv:1.2.3.4';
-                    } else if (userAgent.match(/ucweb/i)) {
-                        browser = 'ucweb';
-                    } else if (userAgent.match(/android/i)) {
-                        browser = 'android';
-                    } else if (userAgent.match(/windows ce/i)) {
-                        browser = 'windowsCe';
-                    } else if (userAgent.match(/windows mobile/i)) {
-                        browser = 'windowsMobile';
-                    } else {
-                        browser = 'PC'
-                    }
-                    return browser;
-                }
-            }
-        })
-        document.addEventListener("DOMContentLoaded", function () {
-            const txtElements = document.querySelectorAll(".txt");
+  el: '#app',
+  data: {
+    timeHanlde: null,
+    tim: 0,
+    masterUrls: [],
+    urls: [],
+    moburls: [],
+    waitingText: "waiting",
+    connectTimeout: "connect Timeout",
+    connectFail: '3ms',
+    name: 'Okking.com/',
+    kefuUrl: "",
+    apkAppUrl: "",
+    pcUrl: "",
+    socialLinks: {
+      telegramUrl: "https://telegram.me/vuanhacai_okking",
+      dailyTelegramUrl: "https://telegram.me/dailyokking24_7",
+      facebookUrl: "https://www.facebook.com/okking68/",
+      agentLoginUrl: "http://fc.okking.red/",
+      giftcodeUrl: "https://okkingcode.pages.dev/"
+    },
+    banners: [
+      "/images/banner/1.jpg",
+      "/images/banner/2.jpg",
+      "/images/banner/3.jpg",
+      "/images/banner/4.jpg",
+      "/images/banner/5.jpg",
+      "/images/banner/6.jpg"
+    ],
+    apiUrl: "https://linksbackend.nnt79g.workers.dev/api/admin/links?site_id=okking"
+  },
+  computed: {
+    groupedBanners() {
+      const pairs = [];
+      if (!this.banners || this.banners.length === 0) return pairs;
+      for (let i = 0; i < this.banners.length; i += 2) {
+        pairs.push(this.banners.slice(i, i + 2));
+      }
+      return pairs;
+    }
+  },
+  async mounted() {
+    await this.fetchLinksFromApi();
+    this.urls = this.getRandomUrls(5);
+    this.moburls = this.getRandomUrls(5);
+    this.startPingCheck();
+  },
+  methods: {
+    async fetchLinksFromApi() {
+      try {
+        const res = await fetch(this.apiUrl);
+        const result = await res.json();
 
-            function updateRandomPing() {
-                txtElements.forEach(element => {
-                    const randomPing = Math.floor(Math.random() * 10 + 1) + "ms";
-                    element.textContent = randomPing;
-                });
-            }
+        if (result.success && result.data) {
+          const data = result.data;
 
-            updateRandomPing();
+          const kefu = data.find(i => i.key_name === 'kefuUrl');
+          const apk = data.find(i => i.key_name === 'apkAppUrl');
+          const pc = data.find(i => i.key_name === 'pcUrl');
 
-            setTimeout(() => {
-                setInterval(updateRandomPing, 1000);
-            }, 1000);
-        });
+          if (kefu) this.kefuUrl = kefu.value;
+          if (apk) this.apkAppUrl = apk.value;
+          if (pc) this.pcUrl = pc.value;
+
+          const pings = data.filter(i => i.category === 'ping_link').map(i => i.value);
+          if (pings.length > 0) {
+            this.masterUrls = pings;
+            this.urls = this.getRandomUrls(5);
+            this.moburls = this.getRandomUrls(5);
+          }
+
+          data.filter(i => i.category === 'social_link').forEach(item => {
+            if (item.value) this.socialLinks[item.key_name] = item.value;
+          });
+
+          const bannerList = data.filter(i => i.category === 'banner_image').map(i => i.value);
+          if (bannerList.length > 0) {
+            this.banners = bannerList;
+          }
+        }
+      } catch (err) {
+        console.error("Lỗi tải link từ API:", err);
+      }
+    },
+    getRandomUrls(count) {
+      if (!this.masterUrls || this.masterUrls.length === 0) return [];
+      const shuffled = this.masterUrls.slice().sort(() => 0.5 - Math.random());
+      const selectedUrls = shuffled.slice(0, count);
+      return selectedUrls.map((url, index) => {
+        const fakeMs = Math.floor(Math.random() * (9 - 3 + 1)) + 3;
+        return {
+          url: url,
+          title: `Link truy cập ${index + 1}`,
+          second: fakeMs + 'ms',
+          time: fakeMs
+        };
+      });
+    },
+    startPingCheck() {
+      if (this.timeHanlde) clearInterval(this.timeHanlde);
+
+      this.timeHanlde = setInterval(() => {
+        if (this.urls && this.urls.length > 0) {
+          this.urls.forEach(item => {
+            const fakeMs = Math.floor(Math.random() * (9 - 3 + 1)) + 3;
+            item.time = fakeMs;
+            item.second = fakeMs + 'ms';
+          });
+        }
+        if (this.moburls && this.moburls.length > 0) {
+          this.moburls.forEach(item => {
+            const fakeMs = Math.floor(Math.random() * (9 - 3 + 1)) + 3;
+            item.time = fakeMs;
+            item.second = fakeMs + 'ms';
+          });
+        }
+      }, 1500);
+    },
+    refresh() {
+      this.urls = this.getRandomUrls(5);
+      this.moburls = this.getRandomUrls(5);
+      this.startPingCheck();
+    },
+    sortOrder(filed, type = 'asc') {
+      return (a, b) => {
+        if (type === 'asc') return a[filed] > b[filed] ? 1 : -1;
+        return a[filed] > b[filed] ? -1 : 1;
+      };
+    },
+    sortList() {
+      this.urls.sort(this.sortOrder('time', 'asc'));
+      this.moburls.sort(this.sortOrder('time', 'asc'));
+    },
+    down() {
+      if (this.browserDetection() == 'PC') {
+        window.location.href = this.pcUrl || "https://okking.com";
+      } else {
+        if (this.browserDetection() == 'iphone' || this.browserDetection() == 'ipad') {
+          window.location.href = this.apkAppUrl || "https://okking91.com/DownloadApp/";
+        } else {
+          window.location.href = this.apkAppUrl || "https://okking91.com/DownloadApp/";
+        }
+      }
+    },
+    browserDetection() {
+      var userAgent = window.navigator.userAgent.toLowerCase();
+      var browser = null;
+      if (userAgent.match(/ipad/i)) {
+        browser = 'ipad';
+      } else if (userAgent.match(/iphone os/i)) {
+        browser = 'iphone';
+      } else if (userAgent.match(/midp/i)) {
+        browser = 'midp';
+      } else if (userAgent.match(/android/i)) {
+        browser = 'android';
+      } else {
+        browser = 'PC';
+      }
+      return browser;
+    }
+  }
+});
