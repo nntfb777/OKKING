@@ -31,7 +31,7 @@ var app = new Vue({
       "/images/banner/5.jpg",
       "/images/banner/6.jpg"
     ],
-    apiUrl: "https://linksbackend.nnt79g.workers.dev/api/admin/links?site_id=okking"
+    apiUrl: "https://linksbackend.nnt79g.workers.dev/api/config?site_id=okking"
   },
   computed: {
     groupedBanners() {
