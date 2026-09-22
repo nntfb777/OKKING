@@ -1,9 +1,6 @@
 var app = new Vue({
   el: '#app',
   data: {
-    timeHanlde: null,avar app = new Vue({
-  el: '#app',
-  data: {
     timeHanlde: null,
     tim: 0,
     masterUrls: [],
